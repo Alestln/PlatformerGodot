@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chje6ud88ptlr"
-path="res://.godot/imported/adventurer-fall-01.png-972af11f5f0afcab0554f8199b0424db.ctex"
+uid="uid://g2pjsc3qgnfw"
+path="res://.godot/imported/spritesheet.png-1e11fc4258a8047b7aa4fed4770f8cff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/fall/adventurer-fall-01.png"
-dest_files=["res://.godot/imported/adventurer-fall-01.png-972af11f5f0afcab0554f8199b0424db.ctex"]
+source_file="res://Assets/Animations/Enemies/Opossum/spritesheet.png"
+dest_files=["res://.godot/imported/spritesheet.png-1e11fc4258a8047b7aa4fed4770f8cff.ctex"]
 
 [params]
 

@@ -1,12 +1,27 @@
-[gd_scene load_steps=16 format=4 uid="uid://co28l5axdqnf2"]
+[gd_scene load_steps=32 format=4 uid="uid://co28l5axdqnf2"]
 
 [ext_resource type="Texture2D" uid="uid://rwx71wyicks" path="res://Assets/Sprites/Backgrounds/CrystalWorld/background01.png" id="1_g4geh"]
 [ext_resource type="Texture2D" uid="uid://3upx0jkif2x5" path="res://Assets/Sprites/Tilesets/CrystalWorld/main_lev_build_1.png" id="1_nqraq"]
-[ext_resource type="Texture2D" uid="uid://jjn0usjqb8xm" path="res://Assets/Animations/Idle/adventurer-idle-00.png" id="2_02alt"]
 [ext_resource type="Script" uid="uid://u7afde21rs0p" path="res://Scripts/Adventurer/adventurer.gd" id="2_3usej"]
 [ext_resource type="PackedScene" uid="uid://cwhcsxax4i17o" path="res://Scenes/Tiles/Spikes/spike.tscn" id="2_yfbkh"]
+[ext_resource type="Texture2D" uid="uid://iuq1thmbjw5g" path="res://Assets/Animations/Player/Adventurer/fall/adventurer-fall-00.png" id="4_7wtyv"]
+[ext_resource type="Texture2D" uid="uid://chje6ud88ptlr" path="res://Assets/Animations/Player/Adventurer/fall/adventurer-fall-01.png" id="5_yo02b"]
+[ext_resource type="Texture2D" uid="uid://jjn0usjqb8xm" path="res://Assets/Animations/Player/Adventurer/Idle/adventurer-idle-00.png" id="6_5bd7j"]
 [ext_resource type="Texture2D" uid="uid://dhox24dpymj5q" path="res://Assets/Sprites/Backgrounds/CrystalWorld/background02.png" id="6_yxobr"]
 [ext_resource type="Texture2D" uid="uid://cm3mgvt1g2awq" path="res://Assets/Sprites/Backgrounds/CrystalWorld/background03.png" id="7_nchf3"]
+[ext_resource type="Texture2D" uid="uid://bbgecs04ttb4b" path="res://Assets/Animations/Player/Adventurer/Idle/adventurer-idle-01.png" id="7_wlsau"]
+[ext_resource type="Texture2D" uid="uid://dfsn5p6u7vw5m" path="res://Assets/Animations/Player/Adventurer/Idle/adventurer-idle-02.png" id="8_7r48e"]
+[ext_resource type="Texture2D" uid="uid://clgjtv6dqjd8q" path="res://Assets/Animations/Player/Adventurer/Idle/adventurer-idle-03.png" id="9_7ilon"]
+[ext_resource type="Texture2D" uid="uid://cj6fsqplnmwom" path="res://Assets/Animations/Player/Adventurer/jump/adventurer-jump-00.png" id="10_llyib"]
+[ext_resource type="Texture2D" uid="uid://0vtlobu5e2no" path="res://Assets/Animations/Player/Adventurer/jump/adventurer-jump-01.png" id="11_li3gq"]
+[ext_resource type="Texture2D" uid="uid://bq1m72043dqbd" path="res://Assets/Animations/Player/Adventurer/jump/adventurer-jump-02.png" id="12_ldqtn"]
+[ext_resource type="Texture2D" uid="uid://cbb80187sn1jl" path="res://Assets/Animations/Player/Adventurer/jump/adventurer-jump-03.png" id="13_uisql"]
+[ext_resource type="Texture2D" uid="uid://gdnwbvx4rv5s" path="res://Assets/Animations/Player/Adventurer/run/adventurer-run-00.png" id="14_mtea3"]
+[ext_resource type="Texture2D" uid="uid://57cy4vtd6rir" path="res://Assets/Animations/Player/Adventurer/run/adventurer-run-01.png" id="15_8l2r0"]
+[ext_resource type="Texture2D" uid="uid://bx80qjvmunb6b" path="res://Assets/Animations/Player/Adventurer/run/adventurer-run-02.png" id="16_xlkfr"]
+[ext_resource type="Texture2D" uid="uid://e1m288ieiuw2" path="res://Assets/Animations/Player/Adventurer/run/adventurer-run-03.png" id="17_vucr0"]
+[ext_resource type="Texture2D" uid="uid://cln1i5jbrlxgd" path="res://Assets/Animations/Player/Adventurer/run/adventurer-run-04.png" id="18_ikctj"]
+[ext_resource type="Texture2D" uid="uid://bsve1dapmholq" path="res://Assets/Animations/Player/Adventurer/run/adventurer-run-05.png" id="19_1op6p"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_yfbkh"]
 scenes/1/scene = ExtResource("2_yfbkh")
@@ -1925,6 +1940,77 @@ sources/0 = SubResource("TileSetAtlasSource_pbh15")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3usej"]
 size = Vector2(10.9599, 26.93)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_vtgbb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7wtyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yo02b")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5bd7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wlsau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7r48e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7ilon")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_llyib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_li3gq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ldqtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_uisql")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_mtea3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8l2r0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xlkfr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vucr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ikctj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_1op6p")
+}],
+"loop": true,
+"name": &"run",
+"speed": 7.0
+}]
+
 [node name="Cave" type="Node2D"]
 
 [node name="Tilemaps" type="Node2D" parent="."]
@@ -1953,8 +2039,11 @@ script = ExtResource("2_3usej")
 position = Vector2(0.528931, 4.00423)
 shape = SubResource("RectangleShape2D_3usej")
 
-[node name="Sprite" type="Sprite2D" parent="Adventurer"]
-texture = ExtResource("2_02alt")
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="Adventurer"]
+sprite_frames = SubResource("SpriteFrames_vtgbb")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.347132
 
 [node name="Camera" type="Camera2D" parent="Adventurer"]
 zoom = Vector2(4, 4)
@@ -2004,16 +2093,16 @@ texture = ExtResource("7_nchf3")
 centered = false
 
 [connection signal="body_entered" from="Tilemaps/GroundTilemap/Spike" to="Tilemaps/GroundTilemap/Spike" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22611" to="Tilemaps/GroundTilemap/@Area2D@22611" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22612" to="Tilemaps/GroundTilemap/@Area2D@22612" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22613" to="Tilemaps/GroundTilemap/@Area2D@22613" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22614" to="Tilemaps/GroundTilemap/@Area2D@22614" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22615" to="Tilemaps/GroundTilemap/@Area2D@22615" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22616" to="Tilemaps/GroundTilemap/@Area2D@22616" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22617" to="Tilemaps/GroundTilemap/@Area2D@22617" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22618" to="Tilemaps/GroundTilemap/@Area2D@22618" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22619" to="Tilemaps/GroundTilemap/@Area2D@22619" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22620" to="Tilemaps/GroundTilemap/@Area2D@22620" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22621" to="Tilemaps/GroundTilemap/@Area2D@22621" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22622" to="Tilemaps/GroundTilemap/@Area2D@22622" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22623" to="Tilemaps/GroundTilemap/@Area2D@22623" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@21955" to="Tilemaps/GroundTilemap/@Area2D@21955" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@21956" to="Tilemaps/GroundTilemap/@Area2D@21956" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@21957" to="Tilemaps/GroundTilemap/@Area2D@21957" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@21958" to="Tilemaps/GroundTilemap/@Area2D@21958" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@21959" to="Tilemaps/GroundTilemap/@Area2D@21959" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@21960" to="Tilemaps/GroundTilemap/@Area2D@21960" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@21961" to="Tilemaps/GroundTilemap/@Area2D@21961" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@21962" to="Tilemaps/GroundTilemap/@Area2D@21962" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@21963" to="Tilemaps/GroundTilemap/@Area2D@21963" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@21964" to="Tilemaps/GroundTilemap/@Area2D@21964" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@21965" to="Tilemaps/GroundTilemap/@Area2D@21965" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@21966" to="Tilemaps/GroundTilemap/@Area2D@21966" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@21967" to="Tilemaps/GroundTilemap/@Area2D@21967" method="_on_Player_entered"]

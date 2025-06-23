@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbgecs04ttb4b"
-path="res://.godot/imported/adventurer-idle-01.png-dfe866a69382e508d0de530529c64f11.ctex"
+uid="uid://bq1m72043dqbd"
+path="res://.godot/imported/adventurer-jump-02.png-5337c9028040c9bb206ed34738d972d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Idle/adventurer-idle-01.png"
-dest_files=["res://.godot/imported/adventurer-idle-01.png-dfe866a69382e508d0de530529c64f11.ctex"]
+source_file="res://Assets/Animations/Player/Adventurer/jump/adventurer-jump-02.png"
+dest_files=["res://.godot/imported/adventurer-jump-02.png-5337c9028040c9bb206ed34738d972d6.ctex"]
 
 [params]
 

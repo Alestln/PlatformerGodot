@@ -5,9 +5,6 @@ var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var speed: int = 8000
 var direction: int = 0
 
-func _ready() -> void:
-	add_to_group("players")
-
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("move_left"):
 		direction = -1

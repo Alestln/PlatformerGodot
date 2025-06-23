@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://57cy4vtd6rir"
-path="res://.godot/imported/adventurer-run-01.png-de53efb3734d0438233084552d8fc76c.ctex"
+uid="uid://0vtlobu5e2no"
+path="res://.godot/imported/adventurer-jump-01.png-69d857dc382bb2d74d61a606b7f0ec5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/run/adventurer-run-01.png"
-dest_files=["res://.godot/imported/adventurer-run-01.png-de53efb3734d0438233084552d8fc76c.ctex"]
+source_file="res://Assets/Animations/Player/Adventurer/jump/adventurer-jump-01.png"
+dest_files=["res://.godot/imported/adventurer-jump-01.png-69d857dc382bb2d74d61a606b7f0ec5c.ctex"]
 
 [params]
 

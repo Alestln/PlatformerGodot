@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj6fsqplnmwom"
-path="res://.godot/imported/adventurer-jump-00.png-4f3eb00dfd6316b221d8b5ea70086c19.ctex"
+uid="uid://btfsi4qadfmti"
+path="res://.godot/imported/opossum-3.png-bd39bca49cffd3fa301fe2f9ef047c71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/jump/adventurer-jump-00.png"
-dest_files=["res://.godot/imported/adventurer-jump-00.png-4f3eb00dfd6316b221d8b5ea70086c19.ctex"]
+source_file="res://Assets/Animations/Enemies/Opossum/Frames/opossum-3.png"
+dest_files=["res://.godot/imported/opossum-3.png-bd39bca49cffd3fa301fe2f9ef047c71.ctex"]
 
 [params]
 
