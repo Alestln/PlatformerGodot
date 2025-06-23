@@ -1,12 +1,12 @@
 class_name Player
 extends CharacterBody2D
 
-var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
-var speed: int = 8000
-var direction: int = 0
+@onready var ground_checker: RayCast2D = $GroundChecker
 
-func _ready() -> void:
-	add_to_group("players")
+var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
+var speed: float = 8000
+var direction: int = 0
+var jump_velocity: float = -400
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("move_left"):
@@ -18,7 +18,10 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = direction * speed * delta
 	
-	if not is_on_floor():
+	if Input.is_action_just_pressed("jump") and ground_checker.is_colliding():
+		velocity.y = jump_velocity
+	
+	if not ground_checker.is_colliding():
 		velocity.y += gravity * delta
 	
 	move_and_slide()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfsn5p6u7vw5m"
-path="res://.godot/imported/adventurer-idle-02.png-1e96192daf3a098d44587c0e5adab180.ctex"
+uid="uid://df70aceqr78un"
+path="res://.godot/imported/opossum-6.png-f17250d40728de1d03e94d021621a9ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Idle/adventurer-idle-02.png"
-dest_files=["res://.godot/imported/adventurer-idle-02.png-1e96192daf3a098d44587c0e5adab180.ctex"]
+source_file="res://Assets/Animations/Enemies/Opossum/Frames/opossum-6.png"
+dest_files=["res://.godot/imported/opossum-6.png-f17250d40728de1d03e94d021621a9ac.ctex"]
 
 [params]
 

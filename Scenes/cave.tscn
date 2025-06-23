@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://co28l5axdqnf2"]
+[gd_scene load_steps=14 format=4 uid="uid://co28l5axdqnf2"]
 
 [ext_resource type="Texture2D" uid="uid://rwx71wyicks" path="res://Assets/Sprites/Backgrounds/CrystalWorld/background01.png" id="1_g4geh"]
 [ext_resource type="Texture2D" uid="uid://3upx0jkif2x5" path="res://Assets/Sprites/Tilesets/CrystalWorld/main_lev_build_1.png" id="1_nqraq"]
-[ext_resource type="Texture2D" uid="uid://jjn0usjqb8xm" path="res://Assets/Animations/Idle/adventurer-idle-00.png" id="2_02alt"]
-[ext_resource type="Script" uid="uid://u7afde21rs0p" path="res://Scripts/Adventurer/adventurer.gd" id="2_3usej"]
 [ext_resource type="PackedScene" uid="uid://cwhcsxax4i17o" path="res://Scenes/Tiles/Spikes/spike.tscn" id="2_yfbkh"]
+[ext_resource type="PackedScene" uid="uid://3xa8yviaebto" path="res://Prefab/Players/adventurer.tscn" id="3_mp6fm"]
 [ext_resource type="Texture2D" uid="uid://dhox24dpymj5q" path="res://Assets/Sprites/Backgrounds/CrystalWorld/background02.png" id="6_yxobr"]
 [ext_resource type="Texture2D" uid="uid://cm3mgvt1g2awq" path="res://Assets/Sprites/Backgrounds/CrystalWorld/background03.png" id="7_nchf3"]
 
@@ -45,8 +44,14 @@ texture = ExtResource("1_nqraq")
 53:2/0 = 0
 54:2/0 = 0
 56:2/0 = 0
+56:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2, -8, -2)
+56:2/0/physics_layer_0/polygon_0/one_way = true
 57:2/0 = 0
+57:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2, -8, -2)
+57:2/0/physics_layer_0/polygon_0/one_way = true
 58:2/0 = 0
+58:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2, -8, -2)
+58:2/0/physics_layer_0/polygon_0/one_way = true
 2:3/0 = 0
 3:3/0 = 0
 5:3/0 = 0
@@ -1922,9 +1927,6 @@ texture = ExtResource("1_nqraq")
 [sub_resource type="TileSet" id="TileSet_uau3g"]
 sources/0 = SubResource("TileSetAtlasSource_pbh15")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3usej"]
-size = Vector2(10.9599, 26.93)
-
 [node name="Cave" type="Node2D"]
 
 [node name="Tilemaps" type="Node2D" parent="."]
@@ -1944,20 +1946,8 @@ z_index = 1
 tile_map_data = PackedByteArray("AADo/wUAAAAKAC0AAADo/wYAAAAKAC4AAADp/wUAAAALAC0AAADp/wYAAAALAC4AAADq/wUAAAAMAC0AAADq/wYAAAAMAC4AAADr/wUAAAANAC0AAADr/wYAAAANAC4AAADs/wUAAAAGAC0AAADs/wYAAAAGAC4AAADt/wUAAAAHAC0AAADt/wYAAAAHAC4AAADu/wUAAAAIAC0AAADu/wYAAAAIAC4AAADv/wUAAAAJAC0AAADv/wYAAAANAC4AAADw/wUAAAAOAC0AAADw/wYAAAAOAC4AAAD5/wQAAAAPACwAAAD5/wUAAAAPAC0AAAD5/wYAAAAPAC4AAAD8/wEAAAAPACwAAAD8/wIAAAAPAC0AAAD8/wMAAAAPAC4AAAD6/wMAAAAPACwAAAD6/wQAAAAPAC0AAAD6/wUAAAAPAC4AAAD9/wAAAAARACsAAAD9/wEAAAARACwAAAD9/wIAAAARAC0AAAD+/wAAAAASACsAAAD+/wEAAAASACwAAAD+/wIAAAASAC0AAAD/////AAARACsAAAD//wAAAAARACwAAAD//wEAAAARAC0AAAAAAP//AAASACsAAAAAAAAAAAASACwAAAAAAAEAAAASAC0AAAACAP//AAAKAC0AAAACAAAAAAAKAC4AAAADAP//AAALAC0AAAADAAAAAAALAC4AAAAEAP//AAAMAC0AAAAEAAAAAAAMAC4AAAAFAP//AAANAC0AAAAFAAAAAAANAC4AAAAGAP//AAAOAC0AAAAGAAAAAAAOAC4AAADb/wUAAAAKAC0AAADb/wYAAAAKAC4AAADc/wUAAAALAC0AAADc/wYAAAALAC4AAADd/wUAAAAMAC0AAADd/wYAAAAMAC4AAADe/wUAAAANAC0AAADe/wYAAAANAC4AAADf/wUAAAAGAC0AAADf/wYAAAAGAC4AAADg/wUAAAAHAC0AAADg/wYAAAAHAC4AAADh/wUAAAAIAC0AAADh/wYAAAAIAC4AAADi/wUAAAAJAC0AAADi/wYAAAANAC4AAADj/wUAAAAOAC0AAADj/wYAAAAOAC4AAAA=")
 tile_set = SubResource("TileSet_uau3g")
 
-[node name="Adventurer" type="CharacterBody2D" parent="."]
-position = Vector2(-293.356, -22.5892)
-collision_layer = 2
-script = ExtResource("2_3usej")
-
-[node name="BodyCollision" type="CollisionShape2D" parent="Adventurer"]
-position = Vector2(0.528931, 4.00423)
-shape = SubResource("RectangleShape2D_3usej")
-
-[node name="Sprite" type="Sprite2D" parent="Adventurer"]
-texture = ExtResource("2_02alt")
-
-[node name="Camera" type="Camera2D" parent="Adventurer"]
-zoom = Vector2(4, 4)
+[node name="Adventurer" parent="." instance=ExtResource("3_mp6fm")]
+position = Vector2(-405.814, 54.0122)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -2002,18 +1992,3 @@ motion_mirroring = Vector2(480, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 texture = ExtResource("7_nchf3")
 centered = false
-
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/Spike" to="Tilemaps/GroundTilemap/Spike" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22611" to="Tilemaps/GroundTilemap/@Area2D@22611" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22612" to="Tilemaps/GroundTilemap/@Area2D@22612" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22613" to="Tilemaps/GroundTilemap/@Area2D@22613" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22614" to="Tilemaps/GroundTilemap/@Area2D@22614" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22615" to="Tilemaps/GroundTilemap/@Area2D@22615" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22616" to="Tilemaps/GroundTilemap/@Area2D@22616" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22617" to="Tilemaps/GroundTilemap/@Area2D@22617" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22618" to="Tilemaps/GroundTilemap/@Area2D@22618" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22619" to="Tilemaps/GroundTilemap/@Area2D@22619" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22620" to="Tilemaps/GroundTilemap/@Area2D@22620" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22621" to="Tilemaps/GroundTilemap/@Area2D@22621" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22622" to="Tilemaps/GroundTilemap/@Area2D@22622" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@22623" to="Tilemaps/GroundTilemap/@Area2D@22623" method="_on_Player_entered"]
