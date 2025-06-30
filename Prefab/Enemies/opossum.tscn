@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://ijfhvqf1uwp4"]
+
+[ext_resource type="Script" uid="uid://ctskgjwpel8oy" path="res://Scripts/Enemies/Opossum/opossum.gd" id="1_h7ute"]
+[ext_resource type="Texture2D" uid="uid://g2pjsc3qgnfw" path="res://Assets/Animations/Enemies/Opossum/spritesheet.png" id="1_nt1co"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7ute"]
+atlas = ExtResource("1_nt1co")
+region = Rect2(0, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh1vl"]
+atlas = ExtResource("1_nt1co")
+region = Rect2(36, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_liawv"]
+atlas = ExtResource("1_nt1co")
+region = Rect2(72, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12w11"]
+atlas = ExtResource("1_nt1co")
+region = Rect2(108, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78tas"]
+atlas = ExtResource("1_nt1co")
+region = Rect2(144, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r1jw"]
+atlas = ExtResource("1_nt1co")
+region = Rect2(180, 0, 36, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3pqrt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7ute")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh1vl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_liawv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12w11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78tas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6r1jw")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdv68"]
+size = Vector2(22, 14)
+
+[node name="Opossum" type="CharacterBody2D"]
+collision_layer = 8
+script = ExtResource("1_h7ute")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3pqrt")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.552558
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 7)
+shape = SubResource("RectangleShape2D_gdv68")
+
+[node name="FloorDetector" type="RayCast2D" parent="."]
+position = Vector2(-14, 8)
+target_position = Vector2(0, 10)

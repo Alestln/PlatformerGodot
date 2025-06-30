@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://co28l5axdqnf2"]
+[gd_scene load_steps=15 format=4 uid="uid://co28l5axdqnf2"]
 
 [ext_resource type="Texture2D" uid="uid://rwx71wyicks" path="res://Assets/Sprites/Backgrounds/CrystalWorld/background01.png" id="1_g4geh"]
 [ext_resource type="Texture2D" uid="uid://3upx0jkif2x5" path="res://Assets/Sprites/Tilesets/CrystalWorld/main_lev_build_1.png" id="1_nqraq"]
 [ext_resource type="PackedScene" uid="uid://cwhcsxax4i17o" path="res://Scenes/Tiles/Spikes/spike.tscn" id="2_yfbkh"]
 [ext_resource type="PackedScene" uid="uid://3xa8yviaebto" path="res://Prefab/Players/adventurer.tscn" id="3_mp6fm"]
+[ext_resource type="PackedScene" uid="uid://ijfhvqf1uwp4" path="res://Prefab/Enemies/opossum.tscn" id="3_yxobr"]
 [ext_resource type="Texture2D" uid="uid://dhox24dpymj5q" path="res://Assets/Sprites/Backgrounds/CrystalWorld/background02.png" id="6_yxobr"]
 [ext_resource type="Texture2D" uid="uid://cm3mgvt1g2awq" path="res://Assets/Sprites/Backgrounds/CrystalWorld/background03.png" id="7_nchf3"]
 
@@ -1946,8 +1947,13 @@ z_index = 1
 tile_map_data = PackedByteArray("AADo/wUAAAAKAC0AAADo/wYAAAAKAC4AAADp/wUAAAALAC0AAADp/wYAAAALAC4AAADq/wUAAAAMAC0AAADq/wYAAAAMAC4AAADr/wUAAAANAC0AAADr/wYAAAANAC4AAADs/wUAAAAGAC0AAADs/wYAAAAGAC4AAADt/wUAAAAHAC0AAADt/wYAAAAHAC4AAADu/wUAAAAIAC0AAADu/wYAAAAIAC4AAADv/wUAAAAJAC0AAADv/wYAAAANAC4AAADw/wUAAAAOAC0AAADw/wYAAAAOAC4AAAD5/wQAAAAPACwAAAD5/wUAAAAPAC0AAAD5/wYAAAAPAC4AAAD8/wEAAAAPACwAAAD8/wIAAAAPAC0AAAD8/wMAAAAPAC4AAAD6/wMAAAAPACwAAAD6/wQAAAAPAC0AAAD6/wUAAAAPAC4AAAD9/wAAAAARACsAAAD9/wEAAAARACwAAAD9/wIAAAARAC0AAAD+/wAAAAASACsAAAD+/wEAAAASACwAAAD+/wIAAAASAC0AAAD/////AAARACsAAAD//wAAAAARACwAAAD//wEAAAARAC0AAAAAAP//AAASACsAAAAAAAAAAAASACwAAAAAAAEAAAASAC0AAAACAP//AAAKAC0AAAACAAAAAAAKAC4AAAADAP//AAALAC0AAAADAAAAAAALAC4AAAAEAP//AAAMAC0AAAAEAAAAAAAMAC4AAAAFAP//AAANAC0AAAAFAAAAAAANAC4AAAAGAP//AAAOAC0AAAAGAAAAAAAOAC4AAADb/wUAAAAKAC0AAADb/wYAAAAKAC4AAADc/wUAAAALAC0AAADc/wYAAAALAC4AAADd/wUAAAAMAC0AAADd/wYAAAAMAC4AAADe/wUAAAANAC0AAADe/wYAAAANAC4AAADf/wUAAAAGAC0AAADf/wYAAAAGAC4AAADg/wUAAAAHAC0AAADg/wYAAAAHAC4AAADh/wUAAAAIAC0AAADh/wYAAAAIAC4AAADi/wUAAAAJAC0AAADi/wYAAAANAC4AAADj/wUAAAAOAC0AAADj/wYAAAAOAC4AAAA=")
 tile_set = SubResource("TileSet_uau3g")
 
-[node name="Adventurer" parent="." instance=ExtResource("3_mp6fm")]
-position = Vector2(-405.814, 54.0122)
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Opossum" parent="Enemies" instance=ExtResource("3_yxobr")]
+position = Vector2(458.563, -61.9426)
+
+[node name="Camera2D" type="Camera2D" parent="Enemies/Opossum"]
+zoom = Vector2(4, 4)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -1992,3 +1998,6 @@ motion_mirroring = Vector2(480, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 texture = ExtResource("7_nchf3")
 centered = false
+
+[node name="Adventurer" parent="." instance=ExtResource("3_mp6fm")]
+position = Vector2(-469.676, 65.6747)

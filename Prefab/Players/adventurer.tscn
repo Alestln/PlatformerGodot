@@ -107,6 +107,7 @@ autoplay = "idle"
 frame_progress = 0.997136
 
 [node name="Camera" type="Camera2D" parent="."]
+visible = false
 zoom = Vector2(4, 4)
 
 [node name="GroundChecker" type="RayCast2D" parent="."]
