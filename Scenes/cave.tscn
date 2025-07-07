@@ -1951,6 +1951,7 @@ tile_set = SubResource("TileSet_uau3g")
 
 [node name="Opossum" parent="Enemies" instance=ExtResource("3_yxobr")]
 position = Vector2(458.563, -61.9426)
+speed = 40.0
 
 [node name="Camera2D" type="Camera2D" parent="Enemies/Opossum"]
 zoom = Vector2(4, 4)
@@ -2000,4 +2001,4 @@ texture = ExtResource("7_nchf3")
 centered = false
 
 [node name="Adventurer" parent="." instance=ExtResource("3_mp6fm")]
-position = Vector2(-469.676, 65.6747)
+position = Vector2(311.231, -108.767)

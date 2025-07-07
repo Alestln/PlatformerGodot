@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ijfhvqf1uwp4"]
+[gd_scene load_steps=12 format=3 uid="uid://ijfhvqf1uwp4"]
 
 [ext_resource type="Script" uid="uid://ctskgjwpel8oy" path="res://Scripts/Enemies/Opossum/opossum.gd" id="1_h7ute"]
 [ext_resource type="Texture2D" uid="uid://g2pjsc3qgnfw" path="res://Assets/Animations/Enemies/Opossum/spritesheet.png" id="1_nt1co"]
@@ -56,8 +56,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gdv68"]
 size = Vector2(22, 14)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3gow"]
+size = Vector2(124, 40)
+
 [node name="Opossum" type="CharacterBody2D"]
 collision_layer = 8
+collision_mask = 3
 script = ExtResource("1_h7ute")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
@@ -73,3 +77,18 @@ shape = SubResource("RectangleShape2D_gdv68")
 [node name="FloorDetector" type="RayCast2D" parent="."]
 position = Vector2(-14, 8)
 target_position = Vector2(0, 10)
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_e3gow")
+
+[node name="PlayerDetectorRay" type="RayCast2D" parent="."]
+enabled = false
+collision_mask = 2
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="PlayerDetector" to="." method="_on_player_detector_body_exited"]
