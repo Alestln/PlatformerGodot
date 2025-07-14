@@ -9,6 +9,9 @@ extends CharacterBody2D
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction: int = 0
 
+func _ready() -> void:
+	GameManager.player = self
+
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("move_left"):
 		direction = -1

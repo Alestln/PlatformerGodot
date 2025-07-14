@@ -7,28 +7,14 @@ extends CharacterBody2D
 
 @export var speed: float = 40.0
 
-var player: Player = null
+@onready var player: Player = null
 
 # Направление движения: 1 = вправо, -1 = влево
 var direction: int = -1
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-func can_see_player_test() -> bool:
-	if not player:
-		return false
-	
-	var space_state = get_world_2d().direct_space_state
-	
-	var query = PhysicsRayQueryParameters2D.create(global_position, player.global_position)
-	query.exclude = [self]
-	query.collide_with_areas = false
-	query.collide_with_bodies = true
-	
-	var result = space_state.intersect_ray(query)
-	
-	# Check collision layer
-	
-	return true
+func _ready() -> void:
+	player = GameManager.player
 
 func can_see_player() -> bool:
 	if not player:
@@ -41,6 +27,10 @@ func can_see_player() -> bool:
 		print("Colliding with player")
 	
 	return true
+
+func get_player_ref() -> void:
+	# Initialiaze player variable
+	pass
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -63,11 +53,3 @@ func update_visual_direction():
 	animated_sprite.flip_h = (bool)(direction + 1)
 	collision.position.x *= -1
 	floor_detector.position.x *= -1
-
-func _on_player_detector_body_entered(body: Node2D) -> void:
-	if body is Player:
-		player = body
-
-func _on_player_detector_body_exited(body: Node2D) -> void:
-	if body is Player:
-		player = null
