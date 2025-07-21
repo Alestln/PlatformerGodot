@@ -1933,6 +1933,14 @@ sources/0 = SubResource("TileSetAtlasSource_pbh15")
 [node name="Adventurer" parent="." instance=ExtResource("3_mp6fm")]
 position = Vector2(427.231, -69.767)
 
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Opossum" parent="Enemies" instance=ExtResource("3_yxobr")]
+position = Vector2(458.563, -61.9426)
+
+[node name="Camera2D" type="Camera2D" parent="Enemies/Opossum"]
+zoom = Vector2(4, 4)
+
 [node name="Tilemaps" type="Node2D" parent="."]
 
 [node name="GroundTilemap" type="TileMapLayer" parent="Tilemaps"]
@@ -1949,14 +1957,6 @@ tile_set = SubResource("TileSet_ru4ra")
 z_index = 1
 tile_map_data = PackedByteArray("AADo/wUAAAAKAC0AAADo/wYAAAAKAC4AAADp/wUAAAALAC0AAADp/wYAAAALAC4AAADq/wUAAAAMAC0AAADq/wYAAAAMAC4AAADr/wUAAAANAC0AAADr/wYAAAANAC4AAADs/wUAAAAGAC0AAADs/wYAAAAGAC4AAADt/wUAAAAHAC0AAADt/wYAAAAHAC4AAADu/wUAAAAIAC0AAADu/wYAAAAIAC4AAADv/wUAAAAJAC0AAADv/wYAAAANAC4AAADw/wUAAAAOAC0AAADw/wYAAAAOAC4AAAD5/wQAAAAPACwAAAD5/wUAAAAPAC0AAAD5/wYAAAAPAC4AAAD8/wEAAAAPACwAAAD8/wIAAAAPAC0AAAD8/wMAAAAPAC4AAAD6/wMAAAAPACwAAAD6/wQAAAAPAC0AAAD6/wUAAAAPAC4AAAD9/wAAAAARACsAAAD9/wEAAAARACwAAAD9/wIAAAARAC0AAAD+/wAAAAASACsAAAD+/wEAAAASACwAAAD+/wIAAAASAC0AAAD/////AAARACsAAAD//wAAAAARACwAAAD//wEAAAARAC0AAAAAAP//AAASACsAAAAAAAAAAAASACwAAAAAAAEAAAASAC0AAAACAP//AAAKAC0AAAACAAAAAAAKAC4AAAADAP//AAALAC0AAAADAAAAAAALAC4AAAAEAP//AAAMAC0AAAAEAAAAAAAMAC4AAAAFAP//AAANAC0AAAAFAAAAAAANAC4AAAAGAP//AAAOAC0AAAAGAAAAAAAOAC4AAADb/wUAAAAKAC0AAADb/wYAAAAKAC4AAADc/wUAAAALAC0AAADc/wYAAAALAC4AAADd/wUAAAAMAC0AAADd/wYAAAAMAC4AAADe/wUAAAANAC0AAADe/wYAAAANAC4AAADf/wUAAAAGAC0AAADf/wYAAAAGAC4AAADg/wUAAAAHAC0AAADg/wYAAAAHAC4AAADh/wUAAAAIAC0AAADh/wYAAAAIAC4AAADi/wUAAAAJAC0AAADi/wYAAAANAC4AAADj/wUAAAAOAC0AAADj/wYAAAAOAC4AAAA=")
 tile_set = SubResource("TileSet_uau3g")
-
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="Opossum" parent="Enemies" instance=ExtResource("3_yxobr")]
-position = Vector2(458.563, -61.9426)
-
-[node name="Camera2D" type="Camera2D" parent="Enemies/Opossum"]
-zoom = Vector2(4, 4)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -2003,16 +2003,16 @@ texture = ExtResource("7_nchf3")
 centered = false
 
 [connection signal="body_entered" from="Tilemaps/GroundTilemap/Spike" to="Tilemaps/GroundTilemap/Spike" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@43008" to="Tilemaps/GroundTilemap/@Area2D@43008" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@43009" to="Tilemaps/GroundTilemap/@Area2D@43009" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@43010" to="Tilemaps/GroundTilemap/@Area2D@43010" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@43011" to="Tilemaps/GroundTilemap/@Area2D@43011" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@43012" to="Tilemaps/GroundTilemap/@Area2D@43012" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@43013" to="Tilemaps/GroundTilemap/@Area2D@43013" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@43014" to="Tilemaps/GroundTilemap/@Area2D@43014" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@43015" to="Tilemaps/GroundTilemap/@Area2D@43015" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@43016" to="Tilemaps/GroundTilemap/@Area2D@43016" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@43017" to="Tilemaps/GroundTilemap/@Area2D@43017" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@43018" to="Tilemaps/GroundTilemap/@Area2D@43018" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@43019" to="Tilemaps/GroundTilemap/@Area2D@43019" method="_on_Player_entered"]
-[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@43020" to="Tilemaps/GroundTilemap/@Area2D@43020" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@45732" to="Tilemaps/GroundTilemap/@Area2D@45732" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@45733" to="Tilemaps/GroundTilemap/@Area2D@45733" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@45734" to="Tilemaps/GroundTilemap/@Area2D@45734" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@45735" to="Tilemaps/GroundTilemap/@Area2D@45735" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@45736" to="Tilemaps/GroundTilemap/@Area2D@45736" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@45737" to="Tilemaps/GroundTilemap/@Area2D@45737" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@45738" to="Tilemaps/GroundTilemap/@Area2D@45738" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@45739" to="Tilemaps/GroundTilemap/@Area2D@45739" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@45740" to="Tilemaps/GroundTilemap/@Area2D@45740" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@45741" to="Tilemaps/GroundTilemap/@Area2D@45741" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@45742" to="Tilemaps/GroundTilemap/@Area2D@45742" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@45743" to="Tilemaps/GroundTilemap/@Area2D@45743" method="_on_Player_entered"]
+[connection signal="body_entered" from="Tilemaps/GroundTilemap/@Area2D@45744" to="Tilemaps/GroundTilemap/@Area2D@45744" method="_on_Player_entered"]

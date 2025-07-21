@@ -7,30 +7,21 @@ extends CharacterBody2D
 
 @export var speed: float = 40.0
 
-@onready var player: Player = null
-
 # Направление движения: 1 = вправо, -1 = влево
 var direction: int = -1
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-func _ready() -> void:
-	player = GameManager.player
-
 func can_see_player() -> bool:
-	if not player:
+	if not GameManager.player:
 		return false
 	
-	player_detector_ray.target_position = player.global_position
+	player_detector_ray.target_position = GameManager.player.global_position
 	player_detector_ray.enabled = true
 	
 	if player_detector_ray.is_colliding():
 		print("Colliding with player")
 	
 	return true
-
-func get_player_ref() -> void:
-	# Initialiaze player variable
-	pass
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
